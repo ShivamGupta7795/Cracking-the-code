@@ -9,7 +9,7 @@ public class string_permutation {
 		if(s1.length()!=s2.length()){
 			return false;
 		}
-		HashSet<Character> set = new HashSet();
+		HashSet<Character> set = new HashSet<Character>();
 		for(char c:s1.toCharArray()){
 			set.add(c);
 		}
