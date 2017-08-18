@@ -12,14 +12,17 @@ public class find_k_element {
 		System.out.println(findklastelement(list, 3).data);
 	}
 	public static Node findklastelement(Node list, int k){
+		
+		while(list!=null){
+			if(k==0)
+				break;
+			k--;
+			list = list.next;
+		}
 		Node prev = list;
 		
 		while(list!=null){
-			if(k==0){
-				prev = prev.next;
-			}else{
-				k--;
-			}
+			prev = prev.next;
 			list = list.next;
 		}
 		return prev;
