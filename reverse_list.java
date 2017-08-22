@@ -4,13 +4,13 @@ public class reverse_list {
 		Node list= new Node(9);
 		list.appendtotail(8);
 		list.appendtotail(7);
-		list = reverselist(list);
+		list = new reverse_list().reverselist(list);
 		while(list!=null){
 			System.out.println(list.data);
 			list = list.next;
 		}
 	}
-	public static Node reverselist(Node list){
+	public Node reverselist(Node list){
 		Node prev = null;
 		Node forward = null;
 		while(list!=null){
