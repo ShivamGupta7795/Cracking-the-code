@@ -16,7 +16,7 @@ public class stack<D>{
 	
 	public stack<D> pop(){
 		if(top!=null){
-			stack item = top;
+			stack<D> item = top;
 			top = top.next;
 			return item;
 		}
