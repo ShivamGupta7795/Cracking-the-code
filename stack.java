@@ -23,7 +23,7 @@ public class stack<D>{
 		return null;	
 	}
 	
-	public stack<D> peek(){
+	public stack<D> peek(){ 
 		if(top!=null){
 			return top;
 		}
