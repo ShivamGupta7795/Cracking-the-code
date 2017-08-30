@@ -10,6 +10,8 @@ public class DFS {
 		return hasDFS(s,d, visited);
 	}
 	
+	/*Intead of a flag I used a Hashset since it's more convinient to use as compared to a flag. A flag needs to be reset
+	everytime after a loop which is not the case with hashset*/
 	public boolean hasDFS(Graph.Node source, Graph.Node destination, HashSet<Integer> visited){
 		if(visited.contains(source.id)){
 			return false;
