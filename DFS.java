@@ -1,7 +1,9 @@
+/*Find a path between two nodes in a Graph using Depth First Search*/
 import java.util.HashSet;
 public class DFS {
 	public boolean hasDFS(int source, int destination){
 		HashSet<Integer> visited = new HashSet<Integer>();
+		/*check Graph.java for Graph's implementation*/
 		Graph graph = new Graph();
 		Graph.Node s = graph.getNode(source);
 		Graph.Node d = graph.getNode(destination);
