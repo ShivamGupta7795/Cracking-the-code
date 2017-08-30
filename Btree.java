@@ -42,12 +42,13 @@ class Btree_create{
 			if(search(node.left, data)){
 				return true;
 				}
-			if(node.right!=null){
-				if(search(node.right, data)){
-					return true;
-				}
+		}
+		if(node.right!=null){
+			if(search(node.right, data)){
+				return true;
 			}
-			}
+		}
+			
 		return false;
 	}
 	
