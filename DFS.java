@@ -16,6 +16,11 @@ public class DFS {
 			return false;
 		}
 		visited.add(source.id);
+		
+		if(source==destination){
+			return true;
+		}
+		
 		for(Graph.Node child:source.adjacent){
 			if(hasDFS(child,destination,visited)){
 				return true;
