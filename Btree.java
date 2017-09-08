@@ -10,17 +10,22 @@ public class Btree {
 class Btree_create{
 	Btree root;
 	
-	Btree insert(Btree node, int data){
+	public void insert(int data){
+		insert(root, data);
+	}
+	
+	private void insert(Btree node, int data){
 		if(node==null){
 			node = new Btree(data);
+			return;
 		}else{
-			if(node.right==null){
-				node.right= insert(node.right, data);
+			if(data>node.data){
+				insert(node.right, data);
 			}else{
-				node.left = insert(node.left, data);
+				insert(node.left, data);
 			}
 		}
-		return node;
+		return;
 	}
 	
 	int countNodes(Btree root){
