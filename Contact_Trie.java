@@ -14,7 +14,7 @@ public class Contact_Trie {
 		}
 		
 		public void setNode(char ch, Node node){
-			node = contacts[ch-'a'];
+			contacts[ch-'a'] = node;
 		}
 		
 		/*add a string to trie*/
