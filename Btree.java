@@ -39,22 +39,22 @@ class Btree_create{
 		}
 	}
 	
+	public boolean search(int data){
+		return search(root, data);
+	}
 	
-	public boolean search(Btree node, int data){
+	private boolean search(Btree node, int data){
+		if(node==null){
+			return false;
+		}
 		if(node.data == data){
 			return true;
 		}
-		if(node.left!=null){
-			if(search(node.left, data)){
-				return true;
-				}
-		}
-		if(node.right!=null){
-			if(search(node.right, data)){
-				return true;
-			}
-		}
-			
+		if(node.data>data){
+			search(node.left, data);
+		}else{
+			search(node.right, data);
+		}	
 		return false;
 	}
 	
