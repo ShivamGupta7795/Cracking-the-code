@@ -15,6 +15,7 @@ public class RunningMedian {
 	 * Approach: Add elements to the buckets while moving forward in array. Rebalance the buckets
 	 * after each addition to make sure that the difference b/w the size of the two buckets should not
 	 * be greater than 1. After rebalancing the buckets, find the median of the two buckets.*/
+	
 	public void getMedian(int[] array){
 		Comparator<Integer> reverse = new Comparator<Integer>(){
 			public int compare(Integer a, Integer b){
@@ -23,6 +24,7 @@ public class RunningMedian {
 		};
 		PriorityQueue<Integer> lowers = new PriorityQueue<Integer>(reverse);
 		PriorityQueue<Integer> highers = new PriorityQueue<Integer>();
+		/*IMP NOTE: A median can be of the double type.*/
 		double[] median = new double[array.length];
 		for(int num=0;num<array.length;num++){
 			addToBucket(array[num], lowers, highers);
@@ -50,7 +52,7 @@ public class RunningMedian {
 	public double getMedian(PriorityQueue<Integer> lowers, PriorityQueue<Integer> highers){
 		PriorityQueue<Integer> minHeap = lowers.size()<highers.size()?lowers:highers;
 		PriorityQueue<Integer> maxHeap = lowers.size()>highers.size()?lowers:highers;	
-		
+		/*Make sure to return only double type value*/
 		if(maxHeap.size()==minHeap.size()){
 			return ((double)maxHeap.peek()+minHeap.peek())/2;
 		}else{
