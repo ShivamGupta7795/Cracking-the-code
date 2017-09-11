@@ -35,8 +35,7 @@ public class Contact_Trie {
 				addString(str,index+1);
 			}
 		}
-		
-		
+			
 		/*returns the number of strings formed with the SubString str*/
 		public int getStringCount(String str, int index){
 			if(index==str.length()){
@@ -48,10 +47,6 @@ public class Contact_Trie {
 				}else{
 					return getStringCount(str, index+1);
 				}
-		}
-		
-		
-		
+		}		
 	}
-	
 }
