@@ -4,7 +4,7 @@ public class Node {
 	Node next;
 	public Node(int data){
 		this.data = data;
-	}
+	} 
 	
 	public void appendtotail(int data){
 		Node newlink = new Node(data);
