@@ -1,7 +1,7 @@
 
 public class QuickSort {
 	public static void main(String[] ar){
-		int[] array = {5,4,3,2,1};
+		int[] array = {5,4,7,10,17,8,13};
 		array = new QuickSort().quicksort(array);
 		for(int i=0;i<array.length;i++){
 			System.out.println(array[i]);
