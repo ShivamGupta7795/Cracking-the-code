@@ -1,6 +1,6 @@
 
 public class Btree {
-	Btree left, right;
+	Btree left, right, parent;
 	int data;
 	public Btree(int data){
 		this.data = data;
@@ -14,18 +14,20 @@ class Btree_create{
 		insert(root, data);
 	}
 	
-	private void insert(Btree node, int data){
+	private Btree insert(Btree node, int data){
 		if(node==null){
 			node = new Btree(data);
-			return;
+			return node;
 		}else{
 			if(data>node.data){
-				insert(node.right, data);
+				node.right = insert(node.right, data);
+				node.right.parent = node;
 			}else{
-				insert(node.left, data);
+				node.left = insert(node.left, data);
+				node.left.parent = node;
 			}
 		}
-		return;
+		return node;
 	}
 	
 	int countNodes(Btree root){
