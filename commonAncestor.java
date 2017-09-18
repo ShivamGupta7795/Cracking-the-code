@@ -1,4 +1,4 @@
-
+package trees;
 public class commonAncestor {
 	public static void main(String[] ar){
 		

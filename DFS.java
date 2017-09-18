@@ -1,3 +1,4 @@
+package trees;
 /*Find a path between two nodes in a Graph using Depth First Search*/
 import java.util.HashSet;
 public class DFS {

@@ -1,3 +1,4 @@
+package trees;
 import java.util.LinkedList;
 import java.util.ArrayList;
 public class BFSTree {

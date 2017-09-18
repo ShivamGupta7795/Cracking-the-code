@@ -1,4 +1,4 @@
-
+package trees;
 public class BSTFromSortedArray {
 	public static void main(String ar[]){
 		

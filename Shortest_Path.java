@@ -1,4 +1,5 @@
 
+package trees;
 public class Shortest_Path {
 	public static void main(String[] ar){
 		

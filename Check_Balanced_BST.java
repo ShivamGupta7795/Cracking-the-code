@@ -1,4 +1,4 @@
-
+package trees;
 public class Check_Balanced_BST {
 	public static void main(String[] str){
 		

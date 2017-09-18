@@ -1,3 +1,4 @@
+package trees;
 import java.util.Arrays;
 
 public class MinHeap {

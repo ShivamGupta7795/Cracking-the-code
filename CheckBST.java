@@ -1,4 +1,4 @@
-
+package trees;
 public class CheckBST {
 	public	static void main(String[] ar){
 		

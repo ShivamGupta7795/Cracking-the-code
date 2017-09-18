@@ -1,4 +1,4 @@
-
+package trees;
 public class Bsearch {
 	public static void main(String str[]){
 		int[] ar= {1,2,3,4,5,6,7,8,9};

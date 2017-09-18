@@ -1,7 +1,7 @@
-
+package trees;
 public class Btree {
-	Btree left, right, parent;
-	int data;
+	public Btree left, right, parent;
+	public int data;
 	public Btree(int data){
 		this.data = data;
 	}
