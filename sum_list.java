@@ -1,3 +1,4 @@
+import java.util.HashMap;
 
 public class sum_list {
 	public static void main(String[] ar){
@@ -16,8 +17,8 @@ public class sum_list {
 	/*adding the list when digits are store in reverse order*/
 	public static Node sumlist(Node list1, Node list2){
 		int carry = 0;
-		Node prev = null;
-		Node head = list2;
+		Node result = new Node(0);
+		Node head = result;
 		while(list1!=null || list2!=null){
 			int sum =0;
 			sum += carry;
@@ -27,20 +28,20 @@ public class sum_list {
 			}
 			if(list2!=null){
 				sum += list2.data;
-				list2.data = sum%10;
-				prev = list2;
 				list2 = list2.next;
-			}else{
-				prev.next = new Node(sum%10);
-				prev = prev.next;
 			}
+			result.next = new Node(sum%10);
+			result = result.next;
+			
 			
 			carry = sum>9?1:0;	
 		}
 		if(carry==1){
-			prev.next = new Node(1);
+			result.next = new Node(1);
 		}
+
 		return head;
+		
 	}
 	
 //	/*adding the list when digits are arranged in forward manner*/
