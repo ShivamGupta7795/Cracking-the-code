@@ -1,30 +1,32 @@
 package stack;
-public class stack<D>{
-	stack<D> top;
-	stack<D> next;
-	D data;
-	
-	public stack(D data){
+public class stack{
+	stack top;
+	stack next;
+	int data;
+	protected stack(){
+		
+	}
+	public stack(int data){
 		this.data = data;
 		top = this;
 	}
 	
-	public void push(D data){
-		stack<D> node = new stack<D>(data);
+	public void push(int data){
+		stack node = new stack(data);
 		node.next = top;
 		top = node;
 	}
 	
-	public stack<D> pop(){
+	public stack pop(){
 		if(top!=null){
-			stack<D> item = top;
+			stack item = top;
 			top = top.next;
 			return item;
 		}
 		return null;	
 	}
 	
-	public stack<D> peek(){ 
+	public stack peek(){ 
 		if(top!=null){
 			return top;
 		}
