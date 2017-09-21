@@ -17,6 +17,7 @@ public class oddevenlist {
             even = even.next;
         }
         odd.next = evenhead;
+        String s = new String();
         return head;
     }
 }
