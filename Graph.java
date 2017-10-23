@@ -8,6 +8,7 @@ public class Graph {
 		LinkedList<Node> adjacent = new LinkedList<Node>();
 		public Node(int id){
 			this.id  = id;
+			new Graph().map.put(id,this);
 		}
 	}
 	
