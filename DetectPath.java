@@ -44,4 +44,4 @@ public class DetectPath {
 		}
 		return false;
 	}
-}
+} 
