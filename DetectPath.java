@@ -27,16 +27,19 @@ public class DetectPath {
 		queue.add(source);
 		while(!queue.isEmpty()){
 			Graph.Node node = queue.poll();
+			if(visited.contains(node)) continue;
+			if(node==destination) return true;
 			visited.add(node);
 			for(Graph.Node child: node.adjacent){
-				if(!visited.contains(child)){
-					if(child==destination){
-						return true;
-					}else{
-						visited.add(child);
-						queue.add(child);
-					}	
-				}
+// 				if(!visited.contains(child)){
+// 					if(child==destination){
+// 						return true;
+// 					}else{
+// 						visited.add(child);
+// 						queue.add(child);
+// 					}	
+// 				}
+				queue.add(child);
 			}
 		}
 		return false;
