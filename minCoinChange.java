@@ -45,5 +45,28 @@ public class minCoinChange {
 	        return count[amount-1];
 	    }
 	    
+	  /*find all the combinations using given coins eg. 5 can be computed in 9 ways:
+	    1+1+1+1+1
+	    1+1+1+2
+	    1+1+2+1
+	    1+2+1+1
+	    2+1+1+1 and so on*/
+//	     int change(int amount, int[] coins, int[] DP){
+//	         if(amount<0)
+//	             return -1;
+	        
+//	         if(DP[amount]!=0)
+//	             return DP[amount];
+	        
+//	         for(int i=1;i<=amount;i++){
+//	             for(int j=0;j<coins.length;j++){
+//	                 if(i>=coins[j])
+//	                     DP[i] += change(i-coins[j], coins, DP);
+//	             }
+//	             System.out.println(DP[i]+" : "+i);
+//	         }
+//	         return DP[amount];
+//	     }
+	  
 	
 }
