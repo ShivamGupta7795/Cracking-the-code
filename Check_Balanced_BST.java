@@ -19,11 +19,12 @@ public class Check_Balanced_BST {
 			return Math.max(left, right)+1;
 		}
 	}
-	public static boolean checkbalanceBT(Btree root){
-		if(checkHeight(root)==-1){
-			return false;
-		}else{
-			return true;
-		}
+	
+	public static boolean isBalanced(Btree root){
+		 if(root==null)
+            		return true;
+        	int left = checkHeight(root.left);
+        	int right = checkHeight(root.right);
+        	return Math.abs(left-right)<=1  && isBalanced(root.left) && isBalanced(root.right);
 	}
 }
