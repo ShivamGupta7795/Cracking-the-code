@@ -12,7 +12,7 @@ public class Check_Balanced_BST {
 		if(right==-1){
 			return -1;
 		}
-		int height = left-right;
+		int height = Math.abs(left-right);
 		if(height>1){
 			return -1;
 		}else{
@@ -23,8 +23,6 @@ public class Check_Balanced_BST {
 	public static boolean isBalanced(Btree root){
 		 if(root==null)
             		return true;
-        	int left = checkHeight(root.left);
-        	int right = checkHeight(root.right);
-        	return Math.abs(left-right)<=1  && isBalanced(root.left) && isBalanced(root.right);
+        	return checkHeight(root)!=-1;
 	}
 }
