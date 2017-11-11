@@ -44,6 +44,23 @@ public class minCoinChange {
 	        count[amount-1] = (min==Integer.MAX_VALUE) ? -1 : min;
 	        return count[amount-1];
 	    }
+	  
+	  /*Another iterative way*/
+	  int anotherCoinChange(int amount, int[] coins){
+		  int[] dp = new int[amount+1];
+	        Arrays.fill(dp, Integer.MAX_VALUE-1);
+	        dp[0] = 0;
+	        for(int coin:coins){
+	            for(int i=coin;i<=amount;i++){
+	            	/*in case if coins does not sum upto given number than i-coin will never reach 0 and therefore,
+	            	 * the value of dp[amount] will be then Integer.MAX_VALUE*/
+	                if(dp[i-coin]+1<dp[i])
+	                    dp[i] = dp[i-coin]+1;
+	            }
+	        }
+	        return (dp[amount]==Integer.MAX_VALUE-1)?-1:dp[amount];
+	   }
+	  
 	    
 	  /*find all the combinations using given coins eg. 5 can be computed in 9 ways:
 	    1+1+1+1+1

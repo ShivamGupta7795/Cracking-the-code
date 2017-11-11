@@ -16,8 +16,8 @@ public class pallindromicSubstring {
         if(s.length()<2) return s;
         
         for(int i=0;i<s.length()-1;i++){
-            traverse(s, i, i);
-            traverse(s, i, i+1);
+            traverse(s, i, i); //for odd length palindrome
+            traverse(s, i, i+1); //for even length palindrome
         }
         return s.substring(index, index+max);
         
