@@ -19,7 +19,6 @@ public class KMPPatternSearch {
 		while(i<slen){
 			if(s[i]==pat[j]){
 				i++;
-				lps[j] = j;
 				j++;
 			}else{
 				if(j!=0)
