@@ -42,7 +42,6 @@ public class palindromeSubString {
 			index = left+1;
 		}	
 		return new int[]{len, index};
-		
 	}
 	
 }
