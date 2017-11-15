@@ -12,6 +12,8 @@ c) Replace a character
  
  Video Explanation:
  https://www.youtube.com/watch?v=We3YDTzNXEk&index=8&list=PLrmLmBdmIlpsHaNTPP_jHHDx_os9ItYXr
+ 
+ https://github.com/mission-peace/interview/blob/master/src/com/interview/dynamic/EditDistance.java
  * */
 public class editDistance {
 	public int minDistance(String s1, String s2) {
