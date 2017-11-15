@@ -1,5 +1,5 @@
 package leetcode;
-
+/*https://www.youtube.com/watch?v=LPFhl65R7ww&t=1204s*/
 public class medianSortedArray {
 	public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 		if(nums1.length>nums2.length){
