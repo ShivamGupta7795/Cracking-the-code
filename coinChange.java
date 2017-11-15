@@ -58,8 +58,9 @@ public class coinChange {
 		dp[0] = 0;
 		for(int coin:coins){
 		    for(int i=coin;i<=amount;i++){
-			if(dp[i-coin]+1<dp[i])
-			    dp[i] = dp[i-coin]+1;
+			    dp[i] = Math.min(dp[i], dp[i-coin]);
+// 			if(dp[i-coin]+1<dp[i])
+// 			    dp[i] = dp[i-coin]+1;
 		    }
 		}
 		return (dp[amount]==Integer.MAX_VALUE-1)?-1:dp[amount];
