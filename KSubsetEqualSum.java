@@ -2,7 +2,13 @@ package leetcode;
 import java.util.ArrayList;
 import java.util.Arrays;
 public class KSubsetEqualSum {
+	public static void main(String[] ar){
+		KSubsetEqualSum ob = new KSubsetEqualSum();
+		System.out.println(ob.canPartitionKSubsets(new int[]{4, 3, 2, 3, 5, 2, 1}, 4));
+	}
+	
 	 public boolean canPartitionKSubsets(int[] nums, int k) {
+		 String[] str = new String[4];
 	        if(k==1)
 	            return true;
 	        
