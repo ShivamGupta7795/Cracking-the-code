@@ -38,6 +38,10 @@ public class coinChange {
 //		}
 //		return ways;
 //	}
+	
+	/*find total combination of coins to reach target
+		dp[i][j] = dp[i-1][j] + dp[i][j-coin];
+	*/
 	public int coinchange(int amount, int[] coins){
 		int[] DP = new int[amount+1];
 	    DP[0] = 1;
@@ -51,7 +55,10 @@ public class coinChange {
 	}
 	
 	
-	/*minimum number of coins needed to reach a target*/
+	/*minimum number of coins needed to reach a target
+	rows depict coins, columns depict target values from 0 to target.
+		dp[i][j]  = min(dp[i-1][j], dp[i][j-coin])
+	*/
 	public int coinChange(int[] coins, int amount) {
 		int[] dp = new int[amount+1];
 		Arrays.fill(dp, Integer.MAX_VALUE-1);
