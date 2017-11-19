@@ -1,66 +1,47 @@
 package leetcode;
 import java.util.ArrayList;
 import java.util.Arrays;
+/*Given an array of integers nums and a positive integer k, find whether it's possible to divide this array 
+into k non-empty subsets whose sums are all equal.
+
+Example 1:
+Input: nums = [4, 3, 2, 3, 5, 2, 1], k = 4
+Output: True
+Explanation: It's possible to divide it into 4 subsets (5), (1, 4), (2,3), (2,3) with equal sums.
+
+Solution: Use DFS to mark visited elements and check if k subsets can be formed with equal sum.
+*/
+
 public class KSubsetEqualSum {
 	public static void main(String[] ar){
 		KSubsetEqualSum ob = new KSubsetEqualSum();
 		System.out.println(ob.canPartitionKSubsets(new int[]{4, 3, 2, 3, 5, 2, 1}, 4));
 	}
 	
-	 public boolean canPartitionKSubsets(int[] nums, int k) {
-		 String[] str = new String[4];
-	        if(k==1)
-	            return true;
-	        
-	        if(k>nums.length)
-	            return false;
-	        
-	        int sum =0;
-	        for(int i:nums)
-	            sum += i;
-	        if(sum%k!=0)
-	            return false;
-	        
-	        sum = sum/k;        
-	        /*Create all the subsets of a set*/
-	        ArrayList<Integer> numslist= new ArrayList(Arrays.asList(nums));
-	        ArrayList<ArrayList<Integer>> list = findSubsets(numslist, nums.length-1);
-	        int count = 0;
-	        for(ArrayList<Integer> temp: list){
-	            int tempsum = 0;
-	            for(int i:temp){
-	                tempsum += i;
-	            }
-	            if(tempsum==sum)
-	                count++;
-	        }
-	        
-	        if(count>=k)
-	            return true;
-	        return false;
-	    }
-	    
-	   private ArrayList<ArrayList<Integer>> findSubsets(ArrayList<Integer> set, int index){
-			ArrayList<ArrayList<Integer>> allSubsets;
-			if(index==-1){
-				allSubsets = new ArrayList<ArrayList<Integer>>();
-				allSubsets.add(new ArrayList<Integer>()); //add an empty set
-			}else{
-				allSubsets = findSubsets(set, index-1); //make a recursive call for each element in the set.
-				int item = set.get(index);
-				ArrayList<ArrayList<Integer>> tempSets = new ArrayList<ArrayList<Integer>>(); //create a temp set, which will
-				//contains the new generated subsets.
-				
-				for(ArrayList<Integer> subset: allSubsets){
-					ArrayList<Integer> newset=  new ArrayList<Integer>();
-					newset.addAll(subset);
-					newset.add(item);
-					tempSets.add(newset);
-				}
-				allSubsets.addAll(tempSets); //add the newly generated subsets to allSubset.
-			}
-			return allSubsets;
-			
+	public boolean canPartitionKSubsets(int[] nums, int k) {
+		int sum=0;
+		for(int num:nums){
+		    sum += num;
 		}
-	}
+		if(sum%k!=0) return false;
+		int target = sum/k;
+		HashSet<Integer> visited = new HashSet<Integer>();
+		return canPartition(nums, k, target, visited, 0, 0);
+    	}
+    
+   public boolean canPartition(int[] nums, int k, int target, HashSet<Integer> visited, int start, int sum){
+        if(k==1) return true;
+        if(target==sum) return canPartition(nums, k-1, target, visited, 0, 0);
+      	for(int i=start;i<nums.length;i++){
+          if(!visited.contains(i)){
+              visited.add(i);
+            if(canPartition(nums, k, target, visited, i+1, sum+nums[i])){
+                return true;
+            }
+              visited.remove(i);
+          }    
+      }
+        return false;
+    }
+}
 
