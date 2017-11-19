@@ -2,8 +2,8 @@ package leetcode;
 /*
  * Find the length of the longest substring T of a given string (consists of lowercase letters only) such 
  * that every character in T appears no less than k times.
-eg. str = ababacb k=3
-output: 5  since "ababa" with 3 a's.
+eg. str = abababcb k=3
+output: 6  since "ababab" with 3 a's and 3b's.
 str = ababd k=2;
 output 4 as "abab" is of length 4 with 2 'a' and 2 'b'.
 */
