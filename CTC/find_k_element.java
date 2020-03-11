@@ -14,6 +14,7 @@ public class find_k_element {
 	}
 	public static Node findklastelement(Node list, int k){
 		Node head = list;
+
 		while(list!=null){
 			if(k==0)
 				break;
@@ -21,6 +22,7 @@ public class find_k_element {
 			list = list.next;
 		}
 		Node prev = head;
+
 		
 		while(list!=null){
 			prev = prev.next;

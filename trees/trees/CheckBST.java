@@ -22,23 +22,15 @@ public class CheckBST {
 		return checkBST(root.left, min, root.data-1)&&checkBST(root.right, root.data+1, max);
 	}
 	/*Method 2: Use inorder traversal*/
-	private static boolean checkBSTInorder(Btree root){
-		int lastelement  = Integer.MIN_VALUE;
-		if(root ==null){
-			return true;
-		}
-		if(!checkBSTInorder(root.left)){
-			return false;
-		}
-		if(root.data<lastelement){
-			return false;
-		}
-		lastelement = root.data;
+	 private void checkBSTInorder(TreeNode root,ArrayList<Integer> list){
 		
-		if(!checkBSTInorder(root.right)){
-			return false;
+		if(root ==null){
+			return;
 		}
-		return true;
+		checkBSTInorder(root.left,list);
+		list.add(root.val);
+		checkBSTInorder(root.right,list);
+		
 	}
 	
 	

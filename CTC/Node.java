@@ -19,14 +19,16 @@ public class Node {
 	public Node delete(int data){
 		Node current = this;
 		Node head = this;
+		Node prev = head;
 		if(current.data==data){
 			return current.next;
 		}
-		while(current.next!=null){
-			if(current.next.data==data){
-				current.next = current.next.next;
+		while(current!=null){
+			if(current.data==data){
+				prev.next = current.next;
 				return head;
 			}
+			prev = current;
 			current = current.next;
 		}
 		return null;

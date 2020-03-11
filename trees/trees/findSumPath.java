@@ -29,8 +29,8 @@ public class findSumPath {
 	
 	public void findSum(Btree root, int sum){
 		int depth = depth(root);
-		int[] array = new int[depth];
-		findSum(root,sum,array,depth);
+		int[] array = new int[depth+1];
+		findSum(root,sum,array,1);
 	}
 	
 	public int depth(Btree root){

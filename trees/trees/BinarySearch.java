@@ -20,6 +20,7 @@ public class BinarySearch {
 			return true;
 		}
 		if(array[mid]>key){
+
 			return binarysearch(array, key, left, mid-1);
 		}else{
 			return binarysearch(array, key, mid+1, right);
